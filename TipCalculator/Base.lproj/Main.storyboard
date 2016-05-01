@@ -111,6 +111,13 @@
                             <constraint firstItem="qgX-YL-7j1" firstAttribute="top" secondItem="ZXd-IQ-03S" secondAttribute="bottom" constant="24" id="yhK-Ln-ATn"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bill" destination="bWD-Cc-ZGy" id="EO8-UQ-xzJ"/>
+                        <outlet property="numberOfPeople" destination="qgX-YL-7j1" id="h4K-Jh-1nh"/>
+                        <outlet property="tip" destination="ZXd-IQ-03S" id="p4e-rw-0Qo"/>
+                        <outlet property="tipPerPerson" destination="0o6-OP-nLp" id="s0j-rk-EmA"/>
+                        <outlet property="totalPerPerson" destination="RWd-Pm-Feo" id="euk-Xn-HMs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
