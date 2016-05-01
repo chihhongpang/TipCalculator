@@ -16,6 +16,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var tipPerPerson: UILabel!
     @IBOutlet weak var totalPerPerson: UILabel!
     
+    @IBAction func submit(sender: UIButton) {
+        self.tipPerPerson.text = calculateTipPerPerson(self.tip.text!, person: self.numberOfPeople.text!)
+        self.totalPerPerson.text = calculateTotalPerPerson(self.bill.text!, tip: self.tip.text!, person: self.numberOfPeople.text!)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -24,6 +28,8 @@ class ViewController: UIViewController {
         self.numberOfPeople.text = "3"
         self.tipPerPerson.text = calculateTipPerPerson(self.tip.text!, person: self.numberOfPeople.text!)
         self.totalPerPerson.text = calculateTotalPerPerson(self.bill.text!, tip: self.tip.text!, person: self.numberOfPeople.text!)
+        //let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        //view.addGestureRecognizer(tap)
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,18 +38,18 @@ class ViewController: UIViewController {
     }
 
     func calculateTipPerPerson(tip: String, person: String) -> String {
-        let tipInt:Int! = Int(tip)
-        let personInt:Int! = Int(person)
-        let tipPerPersonInt:Int! = tipInt! / personInt!
+        let tipInt:Double! = Double(tip)
+        let personInt:Double! = Double(person)
+        let tipPerPersonInt:Double! = tipInt! / personInt!
         return String(tipPerPersonInt)
     }
     
     func calculateTotalPerPerson(bill: String, tip: String, person: String) -> String {
-        let billInt:Int! = Int(bill)
-        let tipInt:Int! = Int(tip)
+        let billInt:Double! = Double(bill)
+        let tipInt:Double! = Double(tip)
         let total = billInt + tipInt
-        let personInt:Int! = Int(person)
-        let totalPerPersonInt:Int! = total / personInt!
+        let personInt:Double! = Double(person)
+        let totalPerPersonInt:Double! = total / personInt!
         return String(totalPerPersonInt)
     }
 
